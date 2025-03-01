@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta property="og:title" content="Judy's Personal Homepage">
+    <meta property="og:description" content="Welcome to Judy's personal website showcasing skills and interests">
+    <meta property="og:image" content="headshot.jpeg">
+    <title>Judy's Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <h1>Welcome to Judy's Homepage</h1>
+            <ul class="nav-links">
+                <li><a href="#profile" class="nav-link">Profile</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#inspiration" class="nav-link">Inspiration</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="profile-about-container">
+            <section id="profile" class="profile">
+                <img src="headshot.jpeg" alt="Judy's Profile Picture" class="profile-image">
+                <h2>Hello, I'm Judy!</h2>
+                <p>UI/UX designer, and matcha lover based in New York.</p>
+            </section>
+            
+            <section id="about" class="content-section">
+                <h2>About Me</h2>
+                <p>I'm a first-year connective media student at Cornell Tech with a passion for web design and data science.</p>
+                
+                <details id="skills">
+                    <summary>My Skills</summary>
+                    <ul>
+                        <li>Frontend Development (HTML, CSS, JavaScript)</li>
+                        <li>UI/UX Design</li>
+                        <li>Python Programming</li>
+                        <li>Data Analytics</li>
+                    </ul>
+                </details>
+                
+                <details id="education">
+                    <summary>Education</summary>
+                    <p>Currently pursuing a dual master of science degrees in Information Science and Connective Media at Cornell Tech, expected to graduate in 2026.</p>
+                </details>
+            </section>
+        </div>
+
+        <section id="inspiration" class="api-section">
+            <h2>Design Inspiration</h2>
+            <p>A random quote about design to inspire my creativity:</p>
+            <div id="quote-container">
+                <p id="quote-text">Loading design quote...</p>
+                <p id="quote-author"></p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Judy's Homepage. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

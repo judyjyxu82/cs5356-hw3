@@ -1,0 +1,289 @@
+:root {
+    --primary-color: #73C7C7;
+    --secondary-color: #F4F8D3;
+    --accent-color: #F7CFD8;
+    --highlight-color: #A6F1E0;
+    --text-color: #333;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+/* Adding smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Create a centered container for profile and about sections */
+.profile-about-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Adjust profile and about sections to fit side by side */
+#profile, #about {
+    flex: 1 1 300px;
+    max-width: 500px;
+}
+
+/* Full-width navbar */
+.navbar-container {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link:hover, .nav-link:focus {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.active {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+    max-width: 100%;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.content-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Using the <details> element */
+details {
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+    color: var(--accent-color);
+    outline: none;
+}
+
+details[open] summary {
+    margin-bottom: 0.5rem;
+}
+
+.api-section {
+    margin-top: 2rem;
+    grid-column: 1 / -1;
+}
+
+#quote-container {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#quote-text {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+#quote-author {
+    font-weight: bold;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+}
+
+/* Add padding to sections for better scrolling */
+section {
+    scroll-margin-top: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .profile-about-container {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.3rem;
+    }
+    
+    .nav-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .profile, .content-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-container {
+        padding: 1rem 0;
+    }
+    
+    .navbar h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .container {
+        gap: 1rem;
+    }
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    #quote-container {
+        padding: 1.5rem 1rem;
+    }
+}
